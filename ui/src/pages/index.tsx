@@ -53,12 +53,12 @@ export default function Home() {
             </a>
             <p className={styles.tagline}>
               built with
-              <code className={styles.code}> o1js</code>
+              <code className={styles.code}> o1js </code> by Miss  <code className={styles.code}> EL KHATTABI</code> for <code className={styles.code}> EthISTANBUL</code>
             </p>
           </div>
           <p className={styles.start}>
-            Get started by editing
-            <code className={styles.code}> src/pages/index.js</code> or <code className={styles.code}> src/pages/index.tsx</code>
+          In leveraging the benefits of blockchain technology, NFTs, and zero- knowledge proofs, the dApp vote system introduces an innovative and 
+          secure way to conduct transparent yet private voting for artist performances  <code className={styles.code}> Artists</code> & <code className={styles.code}> Fans</code> & <code className={styles.code}> Promotors</code>
           </p>
           <div className={styles.grid}>
             <a
@@ -68,7 +68,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2>
-                <span>DOCS</span>
+                <span>CREATE and EVENT - DOCS</span>
                 <div>
                   <Image
                     src={arrowRightSmall}
