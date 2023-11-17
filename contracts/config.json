@@ -1,4 +1,12 @@
 {
   "version": 1,
-  "deployAliases": {}
+  "deployAliases": {
+    "beatzk": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/beatzk.json",
+      "feepayerKeyPath": "/Users/one/.cache/zkapp-cli/keys/beatblock.json",
+      "feepayerAlias": "beatblock",
+      "fee": "0.1"
+    }
+  }
 }
