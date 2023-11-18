@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Name and Date</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h2>Event Name and Date</h2>
+    <form id="eventForm">
+        <label for="eventName">Event Name:</label> <input type="text" id="eventName" required><br><br>
+        <label for="eventDate">Event Date:</label> <input type="date" id="eventDate" required><br><br>
+        <button type="submit">Save Event Details</button>
+    </form>
+    <hr>
+    <h2>Artist Voting</h2>
+    <!-- Add Artist Form -->
+    <form id="artistForm"> <label for="artistName">Artist Name:</label> <input type="text" id="artistName"
+            required><br><br>
+        <label for="artistImage">Artist Image:</label> <input type="file" id="artistImage" accept="image/*" required><br><br>
+
+        <button type="submit">Add Artist</button>
+    </form>
+    
+    <!-- Artists List -->
+<!--     <h3>Artists:</h3>
+    <ul id="artistsList"></ul> -->
+
+    <!-- Ticket/NFT Details -->
+    <h3>Ticket/NFT Details:</h3>
+    <form id="nftForm"><label for="totalTickets">Total Tickets/NFTs Available:</label>
+    <input type="number" id="totalTickets" required><br><br>
+
+    <label for="ticketPrice">Ticket/NFT Price:</label>
+    <input type="number" id="ticketPrice" required><br><br>
+
+    <label for="pourcForWinners"> Pourcentage for Winners:</label>
+    <input type="number" id="pourcForWinners" required><br><br></form>
+
+    <hr> <button onclick="vote()">Create Vote Event</button>
+    <button id="viewEventsBtn" style="display: none;" onclick="window.location.href='event-list.html'">View Event List</button>
+
+    <script src="script.js">
+        // Artists Array to store artist details var artists = []; 
+        // Event Form Submission $("#eventForm").submit(function(event){ event.preventDefault(); var eventName = $("#eventName").val(); var eventDate = $("#eventDate").val();
+        // Save event details to be used later localStorage.setItem("eventName", eventName); localStorage.setItem("eventDate", eventDate); alert("Event details saved successfully!"); });
+        // Artist Form Submission $("#artistForm").submit(function(event){ event.preventDefault(); var artistName = $("#artistName").val(); var artistImage = $("#artistImage").val();
+        // Create artist object with name and image var artist = { name: artistName, image: artistImage, votes: 0 } // Add artist to the artists array artists.push(artist);
+        // Render artists on the page renderArtists(); // Clear the form inputs $("#artistName").val(""); $("#artistImage").val(""); alert("Artist added successfully!"); });
+        // Function to render artists on the page function renderArtists() { // Clear existing list $("#artistsList").empty();
+        // Loop through artists array and create list items with artist details for(var i=0; i<artists.length; i++) { var artistListItem = $("<li>") .append($("<img>").attr("src", artists[i].image).css("width", "100px").css("height", "100px")) .append($("<p>").text("Name: " + artists[i].name)) .append($("<p>").text("Votes: " + artists[i].votes)); $("#artistsList").append(artistListItem); } }
+        // Function to handle voting function vote() { var eventName = localStorage.getItem("eventName"); var eventDate = localStorage.getItem("eventDate"); var totalTickets = $("#totalTickets").val(); var ticketPrice = $("#ticketPrice").val();
+        // Calculate revenue percentage for each artist var totalRevenue = totalTickets * ticketPrice; for(var i=0; i<artists.length; i++) { var revenuePercentage = (artists[i].votes / totalTickets) * 100; alert(artists[i].name + " - Revenue Percentage: " + revenuePercentage + "%"); }
+        // Perform further actions with the voting and revenue data as required // Clear the form inputs $("#totalTickets").val(""); $("#ticketPrice").val(""); } 
+    </script>
+</body>
+
+</html>

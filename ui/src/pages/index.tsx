@@ -6,12 +6,14 @@ import GradientBG from '../components/GradientBG.js';
 import styles from '../styles/Home.module.css';
 import heroMinaLogo from '../../public/assets/hero-mina-logo.svg';
 import arrowRightSmall from '../../public/assets/arrow-right-small.svg';
+import Link from 'next/link.js';
+
 
 export default function Home() {
   useEffect(() => {
     (async () => {
       const { Mina, PublicKey } = await import('o1js');
-      const { Add } = await import('../../../contracts/build/src/');
+      //const { Add } = await import('../../../contracts/build/src/index.js');
 
       // Update this to use the address (public key) for your zkApp account.
       // To try it out, you can try this address for an example "Add" smart contract that we've deployed to
@@ -57,18 +59,15 @@ export default function Home() {
             </p>
           </div>
           <p className={styles.start}>
-          In leveraging the benefits of blockchain technology, NFTs, and zero- knowledge proofs, the dApp vote system introduces an innovative and 
-          secure way to conduct transparent yet private voting for artist performances  <code className={styles.code}> Artists</code> & <code className={styles.code}> Fans</code> & <code className={styles.code}> Promotors</code>
+            In leveraging the benefits of blockchain technology, NFTs, and zero- knowledge proofs, the dApp vote system introduces an innovative and
+            secure way to conduct transparent yet private voting for <code className={styles.code}> Artists</code> & <code className={styles.code}> Fans</code> & <code className={styles.code}> Promotors</code>
           </p>
           <div className={styles.grid}>
-            <a
-              href="https://docs.minaprotocol.com/zkapps"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+           
+         {/*  <Link href="/candidate" > <a> Candidats </a></Link> */}
+            <a className={styles.card} >
               <h2>
-                <span>CREATE and EVENT - DOCS</span>
+                <span>VOTE for your favorite</span>
                 <div>
                   <Image
                     src={arrowRightSmall}
@@ -79,16 +78,17 @@ export default function Home() {
                   />
                 </div>
               </h2>
-              <p>Explore zkApps, how to build one, and in-depth references</p>
+              <p>Suport you Artists & get and great performance and an NFT's </p>
             </a>
-            <a
-              href="https://docs.minaprotocol.com/zkapps/tutorials/hello-world"
+
+             <a
+              href="https://localhost"
               className={styles.card}
               target="_blank"
               rel="noopener noreferrer"
             >
               <h2>
-                <span>TUTORIALS</span>
+                <span>RESULTATS</span>
                 <div>
                   <Image
                     src={arrowRightSmall}
@@ -99,7 +99,7 @@ export default function Home() {
                   />
                 </div>
               </h2>
-              <p>Learn with step-by-step o1js tutorials</p>
+              <p>List of the best ARTISTS</p>
             </a>
             <a
               href="https://discord.gg/minaprotocol"
@@ -108,7 +108,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2>
-                <span>QUESTIONS</span>
+                <span>ONGOING</span>
                 <div>
                   <Image
                     src={arrowRightSmall}
@@ -119,16 +119,11 @@ export default function Home() {
                   />
                 </div>
               </h2>
-              <p>Ask questions on our Discord server</p>
+              <p>All the current VOTES availlable</p>
             </a>
-            <a
-              href="https://docs.minaprotocol.com/zkapps/how-to-deploy-a-zkapp"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="eventCreation.tsx" className={styles.card} target="_blank" rel="noopener noreferrer">
               <h2>
-                <span>DEPLOY</span>
+                <span>VOTE for your favorite</span>
                 <div>
                   <Image
                     src={arrowRightSmall}
@@ -139,7 +134,7 @@ export default function Home() {
                   />
                 </div>
               </h2>
-              <p>Deploy a zkApp to Berkeley Testnet</p>
+              <p>Create an EVENT with a list of Artists and NFT's </p>
             </a>
           </div>
         </main>

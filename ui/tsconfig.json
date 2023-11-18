@@ -23,7 +23,7 @@
         "resolveJsonModule": true,
         "jsx": "preserve",
         "paths": {
-          "@/*": ["./src/*"]
+          "@/*": ["_src/*"]
     }
       },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
