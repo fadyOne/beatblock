@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h2>Event List</h2>
+    <div id="eventList"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch event and artist data
+            var eventName = localStorage.getItem("eventName");
+            var eventDate = localStorage.getItem("eventDate");
+            var artists = JSON.parse(localStorage.getItem("artists") || "[]");
+
+            // Display event information
+            if (eventName && eventDate) {
+                $('#eventList').append('<h3>' + eventName + ' - ' + eventDate + '</h3>');
+            }
+
+            // Display associated artists
+            if (artists.length > 0) {
+                var artistList = $('<ul>');
+                $.each(artists, function(i, artist) {
+                    artistList.append('<li>' + artist.name + '</li>');
+                });
+                $('#eventList').append(artistList);
+            }
+        });
+    </script>
+</body>
+</html>
