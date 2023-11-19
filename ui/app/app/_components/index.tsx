@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-import { wait } from "@/lib/client-side/utils";
-import type ZkappWorkerClient from "../zkappWorkerClient";
-import { Button } from "@/components/button/Button";
-import { Alert } from "@/components/alert/Alert";
+import { wait } from "../../client-side/utils";
+import { Button } from "../../components/button/Button";
+import { Alert } from "../../components/alert/Alert";
 import Candidates from "./candidates/candidates";
-import Link from "next/link";
-import { useLocalStorage } from "@/hooks";
+import { useLocalStorage } from "../../hooks";
+import ZkappWorkerClient from "../zkappWorkerClient";
 
 let transactionFee = 0.1;
 
@@ -105,7 +104,7 @@ export default function Content() {
         }));
         const { Mina, PublicKey, UInt32 } = await import("o1js");
         const { Vote } = await import("@/contracts/build/src/");
-        const ZkappWorkerClient = (await import("@/app/zkappWorkerClient"))
+        const ZkappWorkerClient = (await import("@../zkappWorkerClient"))
           .default;
         const Berkeley = Mina.Network(
           "https://proxy.berkeley.minaexplorer.com/graphql"
